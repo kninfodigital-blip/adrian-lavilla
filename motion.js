@@ -5,32 +5,6 @@
 (function () {
   'use strict';
 
-  /* ── Custom cursor ── */
-  const cursor = document.querySelector('.cursor');
-  if (cursor && window.matchMedia('(hover: hover)').matches) {
-    let cx = 0, cy = 0, tx = 0, ty = 0;
-    document.addEventListener('mousemove', (e) => {
-      tx = e.clientX; ty = e.clientY;
-      cursor.classList.add('visible');
-    });
-    document.addEventListener('mouseleave', () => cursor.classList.remove('visible'));
-
-    const interactives = 'a, button, [role="button"], .btn, .program__cta, .pillar-card';
-    document.addEventListener('mouseover', (e) => {
-      if (e.target.closest(interactives)) cursor.classList.add('hovering');
-    });
-    document.addEventListener('mouseout', (e) => {
-      if (e.target.closest(interactives)) cursor.classList.remove('hovering');
-    });
-
-    (function loop() {
-      cx += (tx - cx) * 0.12;
-      cy += (ty - cy) * 0.12;
-      cursor.style.transform = `translate(${cx}px, ${cy}px) translate(-50%, -50%)`;
-      requestAnimationFrame(loop);
-    })();
-  }
-
   /* ── Scroll progress bar ── */
   const progress = document.querySelector('.progress');
   if (progress) {

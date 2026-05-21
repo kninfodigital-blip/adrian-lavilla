@@ -169,24 +169,6 @@ em{font-style:italic;color:var(--bronze-l)}
   background-size:200px;
 }
 
-/* ── Custom cursor ── */
-.cursor{
-  display:none;
-}
-@media(hover:hover){
-  .cursor{
-    display:block;position:fixed;top:0;left:0;z-index:9998;
-    width:20px;height:20px;border-radius:50%;
-    border:1.5px solid var(--bronze);
-    pointer-events:none;
-    transition:width .25s var(--ease),height .25s var(--ease),opacity .25s;
-    opacity:0;
-    transform:translate(-50%,-50%);
-    mix-blend-mode:difference;
-  }
-  .cursor.visible{opacity:1}
-  .cursor.hovering{width:48px;height:48px;border-color:var(--bronze-l)}
-}
 
 /* ── Progress bar ── */
 .progress{
