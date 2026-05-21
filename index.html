@@ -12,7 +12,10 @@
   <meta property="og:description" content="Ayudo a profesionales con expertise a construir una oferta clara, un sistema de ventas que funciona y una marca que genera autoridad." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://adrianlavilla.com" />
-  <meta property="og:image" content="https://adrianlavilla.com/og-placeholder.png" />
+  <meta property="og:image" content="https://adrianlavilla.com/assets/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:image" content="https://adrianlavilla.com/assets/og-image.png" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Adrián Lavilla — Estrategia, oferta y sistemas de venta" />
   <meta name="twitter:description" content="Ayudo a profesionales con expertise a construir una oferta clara, un sistema de ventas que funciona y una marca que genera autoridad." />
@@ -39,12 +42,65 @@
   </style>
 
   <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="enhance.css" />
+
+  <noscript>
+    <style>
+      .reveal, .hero__line-reveal { opacity: 1 !important; transform: none !important; clip-path: none !important; }
+      .intro-curtain { display: none !important; }
+      body { cursor: auto !important; }
+    </style>
+  </noscript>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Adrián Lavilla",
+    "url": "https://adrianlavilla.com",
+    "jobTitle": "Estratega de negocio · Fundador de Inly Digital",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "AD",
+      "addressLocality": "Andorra"
+    },
+    "knowsAbout": ["Estrategia de negocio", "Oferta y propuesta de valor", "Sistemas de venta", "Marca personal"],
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Inly Digital",
+      "url": "https://adrianlavilla.com"
+    },
+    "sameAs": []
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Adrián Lavilla — Consultoría estratégica privada",
+    "description": "Acompañamiento privado de 3 meses para ordenar oferta, contenido, sistema de ventas y crecimiento. Inversión desde 6.000€.",
+    "provider": { "@type": "Person", "name": "Adrián Lavilla" },
+    "areaServed": ["AD", "ES"],
+    "priceRange": "€€€€"
+  }
+  </script>
 </head>
 <body>
 
   <a href="#main" class="skip">Saltar al contenido</a>
 
-  <!-- Grain overlay + cursor + progress -->
+  <!-- Side index editorial (desktop only) -->
+  <aside class="side-index" aria-hidden="true" data-section-indicator>
+    <ol class="side-index__list">
+      <li data-target="inicio"><span>I</span></li>
+      <li data-target="sistema-inly"><span>II</span></li>
+      <li data-target="sobre-mi"><span>III</span></li>
+      <li data-target="programas"><span>IV</span></li>
+      <li data-target="diagnostico-gratuito"><span>V</span></li>
+    </ol>
+  </aside>
+
+  <!-- Grain overlay + progress -->
   <div class="grain" aria-hidden="true"></div>
 
   <div class="progress" aria-hidden="true"></div>
@@ -173,7 +229,7 @@
     </div>
 
     <!-- ============ PROBLEMA ============ -->
-    <section class="problem paper" data-section="problema" aria-labelledby="problema-title">
+    <section class="problem paper" data-section="problema" aria-labelledby="problema-title" aria-label="El diagnóstico — cinco síntomas">
       <div class="container">
         <div class="problem__grid">
 
@@ -269,10 +325,20 @@
               que no empujan hacia el mismo sitio.
             </p>
             <p>
-              Por eso trabajo con pocos profesionales a la vez, durante el tiempo que
-              haga falta. La estrategia la dirijo yo. La implementación puede ejecutarse
+              Por eso trabajo con <em style="color:var(--bronze-l)">pocos profesionales a la vez</em>,
+              durante el tiempo que haga falta<sup class="footnote-ref">¹</sup>.
+              La estrategia la dirijo yo. La implementación puede ejecutarse
               junto al equipo de <a href="#">Inly Digital</a>.
             </p>
+
+            <aside class="marginalia" aria-label="Nota al margen">
+              <span class="marginalia__ref">¹</span>
+              <span class="marginalia__text">
+                «Pocos clientes a la vez» significa máximo 6 acompañamientos
+                privados simultáneos. No es estilo de venta — es condición
+                de calidad.
+              </span>
+            </aside>
 
             <div class="about__cta-row">
               <a class="btn" href="/diagnostico">Solicitar diagnóstico <span class="arrow">→</span></a>
@@ -497,7 +563,7 @@
     </section>
 
     <!-- ============ CTA FINAL ============ -->
-    <section class="cta-final paper" id="diagnostico-gratuito" data-section="contacto" aria-labelledby="cta-title">
+    <section class="cta-final paper" id="diagnostico-gratuito" data-section="contacto" aria-labelledby="cta-title" aria-label="Llamada final a la auditoría">
       <div class="cta-final__watermark" aria-hidden="true">AL</div>
       <div class="container">
         <div class="cta-final__inner">
@@ -588,6 +654,8 @@
     </div>
   </footer>
 
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="motion.js" defer></script>
+  <script data-cfasync="false" defer src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+  <script src="motion.js" defer></script>
+  <script src="enhance.js" defer></script>
 </body>
 </html>
