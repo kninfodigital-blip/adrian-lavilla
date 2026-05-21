@@ -187,37 +187,6 @@
     font-variation-settings: "opsz" 144, "SOFT" 100;
   }
 
-  /* --- B2-2: Custom cursor --- */
-  body { cursor: none; }
-  @media (hover: none), (pointer: coarse) { body { cursor: auto; } }
-  .cursor-dot, .cursor-ring {
-    position: fixed;
-    top: 0; left: 0;
-    pointer-events: none;
-    z-index: 9998;
-    border-radius: 50%;
-    will-change: transform;
-  }
-  .cursor-dot {
-    width: 6px; height: 6px;
-    background: var(--bronze, #B8956A);
-    margin: -3px 0 0 -3px;
-    mix-blend-mode: difference;
-  }
-  .cursor-ring {
-    width: 32px; height: 32px;
-    margin: -16px 0 0 -16px;
-    border: 1px solid var(--bronze, #B8956A);
-    transition: width 0.3s var(--ease-out-expo),
-                height 0.3s var(--ease-out-expo),
-                margin 0.3s var(--ease-out-expo),
-                background 0.3s ease;
-  }
-  .cursor-ring--hover {
-    width: 56px; height: 56px;
-    margin: -28px 0 0 -28px;
-    background: rgba(184, 149, 106, 0.08);
-  }
 
   /* --- B2-3: Hero line reveal --- */
   .hero__line-reveal {
@@ -678,12 +647,9 @@
     scroll-behavior: auto !important;
   }
   .intro-curtain,
-  .cursor-dot,
-  .cursor-ring,
   .marquee__track {
     display: none !important;
   }
-  body { cursor: auto !important; }
   .hero__line-reveal {
     animation: none !important;
     clip-path: none !important;
@@ -695,7 +661,7 @@
 /* --------- Print --------- */
 @media print {
   body { background: #fff !important; color: #000 !important; }
-  .nav, .side-index, .progress, .grain, .cursor-dot, .cursor-ring,
+  .nav, .side-index, .progress, .grain,
   .marquee, .intro-curtain, .scroll-indicator, .nav__cta { display: none !important; }
   .hero, .about, .programs, .system, .problem, .cta-final {
     padding: 24pt 0 !important;

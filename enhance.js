@@ -57,39 +57,6 @@
     });
   }
 
-  /* --------- 3. Custom cursor (dot + ring) ---------- */
-  function customCursor() {
-    if (prefersReducedMotion || isTouch) return;
-    const dot = document.createElement('div');
-    const ring = document.createElement('div');
-    dot.className = 'cursor-dot';
-    ring.className = 'cursor-ring';
-    dot.setAttribute('aria-hidden', 'true');
-    ring.setAttribute('aria-hidden', 'true');
-    document.body.append(dot, ring);
-
-    let mouseX = 0, mouseY = 0;
-    let ringX = 0, ringY = 0;
-
-    window.addEventListener('mousemove', e => {
-      mouseX = e.clientX; mouseY = e.clientY;
-      dot.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0)`;
-    });
-
-    function animateRing() {
-      ringX += (mouseX - ringX) * 0.18;
-      ringY += (mouseY - ringY) * 0.18;
-      ring.style.transform = `translate3d(${ringX}px, ${ringY}px, 0)`;
-      requestAnimationFrame(animateRing);
-    }
-    animateRing();
-
-    const interactive = 'a, button, .pillar-card, .program, .viewfinder, [role="button"]';
-    document.querySelectorAll(interactive).forEach(el => {
-      el.addEventListener('mouseenter', () => ring.classList.add('cursor-ring--hover'));
-      el.addEventListener('mouseleave', () => ring.classList.remove('cursor-ring--hover'));
-    });
-  }
 
   /* --------- 4. Hero H1: reveal línea a línea ---------- */
   function splitHeroH1() {
@@ -284,7 +251,6 @@
   function init() {
     pageIntroCurtain();
     magneticCTAs();
-    customCursor();
     splitHeroH1();
     animateSystemDiagonal();
     marqueeHoverPause();
